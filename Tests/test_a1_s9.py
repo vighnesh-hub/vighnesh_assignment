@@ -9,10 +9,7 @@ def test_webshop(page):
     product_link = page.locator("//h2[@class='product-title']/a[normalize-space()='Health Book']")
     product_link.click()
     
-    # Wait for the specific <h1> to appear on the details page
     page.wait_for_selector("//div[@class='product-name']/h1")
-
-    # NOW your original locator will work perfectly
     product_name = page.locator("//div[contains(@class,'product-name')]//h1[1]")
     print("Product Name:", product_name.inner_text().strip())
 
