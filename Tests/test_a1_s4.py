@@ -11,7 +11,7 @@ def test_amazon (page):
     print("product name:" , product_name.inner_text().strip())
     product_name.click()
     page.wait_for_timeout(5000)
-    price=page.locator("//div[contains(@class,'a-section apex-core-price-identifier')]/..//span[@class='a-price-whole']")
-    print("product price:" ,price.inner_text().strip())
+    price=page.locator("xpath=//*[@id='corePriceDisplay_desktop_feature_div']/div/div[1]/span[3]/span[2]/span[2]")
+    #print("product price:", price.inner_text())
     
    
