@@ -10,9 +10,9 @@ def test_register(page):
     page.locator("//*[@id='customer.address.zipCode']").fill("673524")
     page.locator("//*[@id='customer.phoneNumber']").fill("7034916271")
     page.locator("//*[@id='customer.ssn']").fill("70347483")
-    page.locator("//*[@id='customer.username']").fill("marval")
-    page.locator("//*[@id='customer.password']").fill("123ert")
-    page.locator("//*[@id='repeatedPassword']").fill("123ert")
+    page.locator("//*[@id='customer.username']").fill("vishnu")
+    page.locator("//*[@id='customer.password']").fill("m1234")
+    page.locator("//*[@id='repeatedPassword']").fill("m1234")
     page.locator("//input[@value='Register']").click()
 
     assert page.locator("//h1[contains(@class,'title')]/..//p[text()='Your account was created successfully. You are now logged in.']").is_visible()
@@ -20,7 +20,9 @@ def test_register(page):
 
     Accounts_overview= page.locator("//a[text()='Accounts Overview']")
     Accounts_overview.click()
-
+     
+    Account_number=page.locator("//*[@id='accountTable']/tbody/tr[1]/td[1]/a").inner_text()
+    print("Account number: ",Account_number)
     page.wait_for_timeout(5000)
    
 
